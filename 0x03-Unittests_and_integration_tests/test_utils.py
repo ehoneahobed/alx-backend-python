@@ -28,7 +28,7 @@ class TestAccessNestedMap(unittest.TestCase):
     """_summary_
 
     Args:
-                                    unittest (_type_): _description_
+        unittest (_type_): _description_
     """
 
     @parameterized.expand(
@@ -50,7 +50,8 @@ class TestAccessNestedMap(unittest.TestCase):
             ({"a": 1}, ("a", "b"), KeyError)
         ]
     )
-    def test_access_nested_map_exception(self, nested_map, path, expected_output):
+    def test_access_nested_map_exception(self, nested_map, path,
+                                         expected_output):
         """_summary_
         """
         with self.assertRaises(expected_output) as context:
@@ -61,7 +62,7 @@ class TestGetJson(unittest.TestCase):
     """_summary_
 
     Args:
-            unittest (_type_): _description_
+                    unittest (_type_): _description_
     """
     @parameterized.expand(
         [
@@ -84,18 +85,35 @@ class TestMemoize(unittest.TestCase):
     """_summary_
 
     Args:
-            unittest (_type_): _description_
+                    unittest (_type_): _description_
     """
 
     def test_memoize(self):
+        """_summary_
+
+        Returns:
+                _type_: _description_
+        """
 
         class TestClass:
+            """_summary_
+            """
 
             def a_method(self):
+                """_summary_
+
+                Returns:
+                        _type_: _description_
+                """
                 return 42
 
             @memoize
             def a_property(self):
+                """_summary_
+
+                Returns:
+                        _type_: _description_
+                """
                 return self.a_method()
 
         test_obj = TestClass()
